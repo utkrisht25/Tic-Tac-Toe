@@ -19,7 +19,10 @@ function App() {
            <Player initialName="Player 2" symbol="O" isActive={activePlayer === 'O'} />
         </ol>
       {/* this handleselectsquare will execute in GameBoard component so we paas it as a prop to GameBoard */}
+      {/* and here this active player is the common state that is work for both gameboard and player component */}
+      {/* and this is concept of state lifting up that is appling a state to multi component from a another component(parent component)  */}
           <GameBoard onSelectSquare={handleSelectSquare} activePlayerSymbol={activePlayer} />
+
       </div>
         log
     </main>
