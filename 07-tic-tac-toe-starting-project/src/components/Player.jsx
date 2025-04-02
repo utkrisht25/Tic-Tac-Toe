@@ -2,14 +2,16 @@ import { useState } from "react";
 
 
 
-export default function Player({ initialName , symbol , isActive}){
+export default function Player({ initialName , symbol , isActive , onChangeName}){
     const [playerName , setPlayerName] = useState(initialName);
     const [ isEditing , setIsEditing ] = useState(false);
 
     function handleEditClick(){
             // setIsEditing(!isEditing); //this will reverse the current state true to false and vice versa
-            setIsEditing((prev)=> !prev ) //setIsEditing fxn automatic takes the prev(current) state as parameter and here we change it using this arrow fxn
-
+            setIsEditing((prev)=> !prev ); //setIsEditing fxn automatic takes the prev(current) state as parameter and here we change it using this arrow fxn
+            if(isEditing){
+                onChangeName(symbol , playerName);
+            }
     }
     function handleChange(event){
             console.log(event);
