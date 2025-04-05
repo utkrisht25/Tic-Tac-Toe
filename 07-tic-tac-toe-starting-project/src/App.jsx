@@ -84,6 +84,7 @@ function App() {
     });
   
   }
+    //it will reset the GameTurns again to no values , so that next time 2 new players came , they can play without any previous entries in the board
   function handleComplete(){
     setGameTurns([]);
   }
